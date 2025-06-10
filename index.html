@@ -10,27 +10,193 @@
 
 <body>
     <header>
+        <button class="language-toggle" onclick="toggleLanguage()">
+            <span class="english">IND</span>
+            <span class="indonesian">ENG</span>
+        </button>
         <h1>USC ASIS</h1>
         <nav>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">
+                <span class="english">About</span>
+                <span class="indonesian">Tentang</span>
+            </a>
+            <a href="#events">
+                <span class="english">Events</span>
+                <span class="indonesian">Acara</span>
+            </a>
+            <a href="#contact">
+                <span class="english">Contact</span>
+                <span class="indonesian">Kontak</span>
+            </a>
         </nav>
     </header>
-
+    
     <main>
         <section id="about">
-            <h2>About Our Website</h2>
-            <p>This is our official website</p>
-            <p>We are the only club that hosts community events for students who are Indonesian or affiliated with an Indonesian
-            identity in the University of Southern California. We bring our members together through either cultural events,
-            excursions or campaigns. We have a strong identity and we are always up to the challenge of being creative with the way
-            we nurture community.</p>
-            <img src="assets/asis_logo.jpeg" alt="Description of image">
-            <img src="assets/trojan_statue.jpeg" alt="Description of image">
+            <h2>
+                <span class="english">About Us</span>
+                <span class="indonesian">Tentang Kami</span>
+            </h2>
+        
+            <p class="english">Welcome to our official website!</p>
+            <p class="indonesian">Selamat datang di website resmi kami!</p>
+        
+            <p class="english">We are the only club that hosts community events for students who are Indonesian or affiliated
+                with an
+                Indonesian identity in the University of Southern California. We bring our members together through either
+                cultural events, excursions or campaigns. We have a strong identity and we are always up to the challenge of
+                being creative with the way we nurture community.</p>
+            <p class="indonesian">Kami adalah satu-satunya klub yang mengadakan acara komunitas untuk mahasiswa yang
+                berkebangsaan Indonesia atau yang memiliki identitas Indonesia di University of Southern California. Kami
+                menyatukan anggota melalui acara budaya, perjalanan, atau kampanye. Kami memiliki identitas yang kuat dan selalu
+                siap menghadapi tantangan untuk kreatif dalam cara memelihara komunitas.</p>
+        
+            <img src="assets/asis_logo.jpeg" alt="USC ASIS Logo">
+            <img src="assets/trojan_statue.jpeg" alt="USC Trojan Statue">
+        </section>
+        
+        <section id="events">
+            <h2>
+                <span class="english">Upcoming Events</span>
+                <span class="indonesian">Acara Mendatang</span>
+            </h2>
+        
+            <p class="english">Join us for our signature events throughout the academic year! We host welcoming events each
+                semester to
+                bring our Indonesian community together.</p>
+            <p class="indonesian">Bergabunglah dengan kami untuk acara unggulan sepanjang tahun akademik! Kami mengadakan acara
+                penyambutan setiap semester untuk menyatukan komunitas Indonesia kami.</p>
+        
+            <div class="events-grid">
+                <div class="event-card">
+                    <h3>🍂
+                        <span class="english">Fall Welcoming</span>
+                        <span class="indonesian">Penyambutan Musim Gugur</span>
+                    </h3>
+                    <div class="event-date">
+                        <span class="english">September 2025</span>
+                        <span class="indonesian">September 2025</span>
+                    </div>
+                    <div class="event-description">
+                        <span class="english">
+                            Start the academic year with us! Our Fall Welcoming event brings together new and returning
+                            Indonesian students at USC. Enjoy traditional Indonesian food, cultural performances, and the chance
+                            to connect with your community. This is the perfect opportunity to meet fellow Indonesian Trojans
+                            and learn about ASIS activities for the semester.
+                        </span>
+                        <span class="indonesian">
+                            Mulai tahun akademik bersama kami! Acara Penyambutan Musim Gugur kami mempertemukan mahasiswa
+                            Indonesia baru dan lama di USC. Nikmati makanan tradisional Indonesia, pertunjukan budaya, dan
+                            kesempatan untuk terhubung dengan komunitas Anda. Ini adalah kesempatan sempurna untuk bertemu
+                            sesama Trojan Indonesia dan belajar tentang kegiatan ASIS untuk semester ini.
+                        </span>
+                    </div>
+                </div>
+        
+                <div class="event-card">
+                    <h3>🌸
+                        <span class="english">Spring Welcoming</span>
+                        <span class="indonesian">Penyambutan Musim Semi</span>
+                    </h3>
+                    <div class="event-date">
+                        <span class="english">February 2025</span>
+                        <span class="indonesian">Februari 2025</span>
+                    </div>
+                    <div class="event-description">
+                        <span class="english">
+                            Welcome back to a new semester! Our Spring Welcoming celebrates the fresh start of the spring
+                            semester with Indonesian cultural festivities. Join us for delicious Indonesian cuisine, traditional
+                            games, and networking opportunities. New members are especially welcome to discover what ASIS has to
+                            offer.
+                        </span>
+                        <span class="indonesian">
+                            Selamat datang kembali di semester baru! Penyambutan Musim Semi kami merayakan awal yang segar dari
+                            semester musim semi dengan perayaan budaya Indonesia. Bergabunglah dengan kami untuk kuliner
+                            Indonesia yang lezat, permainan tradisional, dan kesempatan berjaringan. Anggota baru sangat
+                            disambut untuk mengetahui apa yang ASIS tawarkan.
+                        </span>
+                    </div>
+                </div>
+        
+                <div class="event-card">
+                    <h3>🎊
+                        <span class="english">Cultural Showcase</span>
+                        <span class="indonesian">Pameran Budaya</span>
+                    </h3>
+                    <div class="event-date">
+                        <span class="english">Throughout the Year</span>
+                        <span class="indonesian">Sepanjang Tahun</span>
+                    </div>
+                    <div class="event-description">
+                        <span class="english">
+                            Experience the rich diversity of Indonesian culture through our various cultural events, including
+                            traditional dance performances, cooking workshops, and educational seminars about Indonesian
+                            heritage and traditions.
+                        </span>
+                        <span class="indonesian">
+                            Rasakan kekayaan budaya Indonesia melalui berbagai acara budaya kami, termasuk pertunjukan tari
+                            tradisional, workshop memasak, dan seminar edukatif tentang warisan dan tradisi Indonesia.
+                        </span>
+                    </div>
+                </div>
+        
+                <div class="event-card">
+                    <h3>🏛️
+                        <span class="english">USC Community Excursions</span>
+                        <span class="indonesian">Perjalanan Komunitas USC</span>
+                    </h3>
+                    <div class="event-date">
+                        <span class="english">Monthly</span>
+                        <span class="indonesian">Bulanan</span>
+                    </div>
+                    <div class="event-description">
+                        <span class="english">
+                            Explore Los Angeles and beyond with your Indonesian community! From beach trips to museum visits,
+                            our excursions help members bond while discovering the amazing opportunities Southern California has
+                            to offer.
+                        </span>
+                        <span class="indonesian">
+                            Jelajahi Los Angeles dan sekitarnya bersama komunitas Indonesia Anda! Dari perjalanan pantai hingga
+                            kunjungan museum, perjalanan kami membantu anggota menjalin ikatan sambil menemukan peluang
+                            menakjubkan yang ditawarkan California Selatan.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>
+                <span class="english">Contact Us</span>
+                <span class="indonesian">Hubungi Kami</span>
+            </h2>
+            <div class="contact-info">
+                <p class="english">Ready to join the USC Indonesian community? We'd love to hear from you :)</p>
+                <p class="indonesian">Siap bergabung dengan komunitas Indonesia USC? Kami ingin mendengar dari Anda :)</p>
+        
+                <p><strong>Email:</strong> <br> uscasis@usc.edu <br>
+                    <span class="english">Contact us for more information about upcoming events and membership!</span>
+                    <span class="indonesian">Hubungi kami untuk informasi lebih lanjut tentang acara mendatang dan
+                        keanggotaan!</span>
+                </p>
+        
+                <p><strong>
+                        <span class="english">Social Media:</span>
+                        <span class="indonesian">Media Sosial:</span>
+                    </strong> <br>
+                    @uscasis on Instagram <br>
+                    <span class="english">Follow us for the latest updates on events and activities!</span>
+                    <span class="indonesian">Ikuti kami untuk pembaruan terbaru tentang acara dan kegiatan!</span>
+                </p>
+        
+                <p><strong>
+                        <span class="english">Location:</span>
+                        <span class="indonesian">Lokasi:</span>
+                    </strong> USC Campus</p>
+            </div>
         </section>
     </main>
-
-    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
