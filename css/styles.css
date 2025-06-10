@@ -30,7 +30,7 @@ header {
 
 header h1 {
     color: #8B0000;
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: clamp(1.3rem, 4vw, 2.2rem);
     font-weight: bold;
     margin: 0;
 }
@@ -46,7 +46,7 @@ nav a {
     color: #333;
     text-decoration: none;
     font-weight: 500;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
     transition: all 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -65,10 +65,10 @@ nav a.active {
     background: #cc0000;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 5px;
     cursor: pointer;
-    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
     font-weight: 500;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -85,8 +85,8 @@ nav a.active {
 
 /* Main Content */
 main {
-    margin-top: clamp(100px, 15vw, 120px);
-    padding: clamp(1rem, 4vw, 2rem);
+    margin-top: clamp(80px, 12vw, 120px);
+    padding: clamp(0.8rem, 3vw, 2rem);
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -94,8 +94,8 @@ main {
 
 section {
     background: rgba(255, 255, 255, 0.95);
-    margin: clamp(1.5rem, 4vw, 2.5rem) 0;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
+    margin: clamp(1rem, 3vw, 2.5rem) 0;
+    padding: clamp(1rem, 3vw, 2.5rem);
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -108,7 +108,7 @@ section:hover {
 h2 {
     color: #8B0000;
     margin-bottom: 1.5rem;
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.3rem, 4vw, 2rem);
     font-weight: 700;
     border-bottom: 3px solid #FFD700;
     padding-bottom: 0.5rem;
@@ -117,35 +117,103 @@ h2 {
 
 p {
     margin-bottom: 1.2rem;
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
     line-height: 1.7;
     text-align: justify;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+/* Image Gallery Styles */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
     border-radius: 12px;
-    margin: 1.5rem 0;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    background: #f5f5f5;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.image-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    margin: 0;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
     transition: transform 0.3s ease;
 }
 
-img:hover {
+.image-container:hover .image-overlay {
+    transform: translateY(0);
+}
+
+/* Regular images in sections */
+section>img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5rem auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+section>img:hover {
     transform: scale(1.02);
+}
+
+/* Event card images */
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1rem 0 0 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.event-card img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Events Grid */
 .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: clamp(1.5rem, 3vw, 2rem);
+    gap: clamp(1rem, 3vw, 2rem);
     margin-top: 2rem;
 }
 
 .event-card {
     background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    padding: clamp(1.2rem, 3vw, 2rem);
+    padding: clamp(1rem, 3vw, 2rem);
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -190,7 +258,7 @@ img:hover {
 .event-card h3 {
     color: #8B0000;
     margin-bottom: 1rem;
-    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-size: clamp(1rem, 3vw, 1.3rem);
     font-weight: 700;
 }
 
@@ -198,22 +266,23 @@ img:hover {
     color: #B8860B;
     font-weight: bold;
     margin-bottom: 1rem;
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .event-description {
     color: #444;
-    font-size: clamp(0.9rem, 2vw, 0.95rem);
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
     line-height: 1.6;
     text-align: justify;
+    margin-bottom: 1rem;
 }
 
 /* Contact Info */
 .contact-info {
     background: linear-gradient(135deg, #c2b35c 0%, #B8860B 100%);
-    padding: clamp(1.5rem, 3vw, 2rem);
+    padding: clamp(1.2rem, 3vw, 2rem);
     border-radius: 12px;
     margin-top: 1.5rem;
     border: 2px solid #B8860B;
@@ -229,6 +298,7 @@ img:hover {
 .contact-info p {
     margin-bottom: 1rem;
     color: #fff;
+    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
 }
 
 /* Language System */
@@ -247,72 +317,24 @@ body.indonesian-active .indonesian {
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 120px;
+    scroll-padding-top: 100px;
 }
 
-/* Responsive Design */
+/* Responsive Design - Mobile First Approach */
 
-/* Tablet Styles */
-@media (max-width: 768px) {
+/* Small Mobile Devices (320px and up) */
+@media (max-width: 420px) {
     header {
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1rem;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    nav {
-        width: 100%;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-
-    .language-toggle {
-        position: absolute;
-        top: 1rem;
-        right: 1.5rem;
-    }
-
-    main {
-        margin-top: 140px;
-    }
-
-    .events-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-
-    section {
-        margin: 1.5rem 0;
-        padding: 1.5rem;
-    }
-}
-
-/* Mobile Styles */
-@media (max-width: 480px) {
-    header {
-        padding: 1rem;
-        text-align: center;
+        align-items: center;
+        gap: 0.8rem;
+        min-height: 80px;
     }
 
     header h1 {
-        font-size: 1.5rem;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-
-    nav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    nav a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-        min-width: 70px;
+        font-size: 1.4rem;
+        order: 2;
         text-align: center;
     }
 
@@ -320,19 +342,49 @@ html {
         position: absolute;
         top: 0.5rem;
         right: 1rem;
-        padding: 0.4rem 0.8rem;
+        order: 1;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 0.3rem;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 0.4rem 0.6rem;
         font-size: 0.8rem;
+        min-width: 60px;
+        text-align: center;
+        border-radius: 3px;
     }
 
     main {
-        margin-top: 160px;
-        padding: 1rem;
+        margin-top: 100px;
+        padding: 0.8rem;
     }
 
     section {
-        padding: 1.2rem;
-        margin: 1rem 0;
-        border-radius: 12px;
+        padding: 1rem;
+        margin: 0.8rem 0;
+        border-radius: 10px;
+    }
+
+    h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    p {
+        text-align: left;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .events-grid {
@@ -341,54 +393,193 @@ html {
     }
 
     .event-card {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 
-    h2 {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 1rem;
+    .event-card img {
+        height: 150px;
+        margin: 0.8rem 0 0 0;
     }
 
-    p {
-        text-align: left;
-        font-size: 1rem;
+    .event-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
-    img {
+    section>img {
         margin: 1rem auto;
-        display: block;
-        max-width: 90%;
+        max-width: 95%;
+        border-radius: 8px;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin: 1rem 0;
+    }
+
+    .image-container img {
+        height: 180px;
+    }
+
+    .contact-info {
+        padding: 1rem;
+    }
+
+    .contact-info p {
+        font-size: 0.9rem;
     }
 }
 
-/* Ultra Small Screens */
-@media (max-width: 360px) {
+/* Medium Mobile Devices (421px to 600px) */
+@media (min-width: 421px) and (max-width: 600px) {
     header {
-        padding: 0.8rem;
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
     .language-toggle {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
+        position: absolute;
+        top: 0.8rem;
+        right: 1.5rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 0.8rem;
     }
 
     nav a {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.6rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
     }
 
     main {
-        padding: 0.8rem;
-        margin-top: 150px;
+        margin-top: 120px;
+        padding: 1rem;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .event-card img {
+        height: 180px;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .image-container img {
+        height: 200px;
+    }
+}
+
+/* Tablet Styles (601px to 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .language-toggle {
+        position: static;
+        order: 3;
+    }
+
+    nav {
+        order: 2;
+        gap: 1rem;
+    }
+
+    main {
+        margin-top: 100px;
+        padding: 1.5rem;
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .event-card img {
+        height: 200px;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* Large Tablet and Small Desktop (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Desktop Styles (1025px and up) */
+@media (min-width: 1025px) {
+    .events-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Ultra Small Screens (Below 320px) */
+@media (max-width: 319px) {
+    header {
+        padding: 0.6rem 0.8rem;
+        min-height: 90px;
+    }
+
+    .language-toggle {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+        top: 0.3rem;
+        right: 0.8rem;
+    }
+
+    nav a {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.5rem;
+        min-width: 50px;
+    }
+
+    main {
+        padding: 0.6rem;
+        margin-top: 110px;
     }
 
     section {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     .event-card {
-        padding: 1rem;
+        padding: 0.8rem;
+    }
+
+    .event-card img {
+        height: 120px;
+    }
+
+    .image-container img {
+        height: 150px;
     }
 }
 
@@ -401,6 +592,25 @@ html {
 
     section {
         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    main {
+        margin-top: 80px;
+    }
+
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    .event-card img {
+        height: 120px;
+    }
+
+    .image-container img {
+        height: 150px;
     }
 }
 
