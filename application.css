@@ -68,7 +68,7 @@ button[type="submit"]:hover {
     justify-content: flex-start;
   }
   .form-container {
-    padding: 1.2rem 0.7rem;
+    padding: 1.2rem 5vw;
     border-radius: 12px;
     max-width: 99vw;
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
