@@ -276,22 +276,33 @@ body.indonesian-active .indonesian {
 }
 
 @media (max-width: 600px) {
+    body {
+        background: #f8fafc;
+    }
+    .page-container {
+        padding: 0.5rem 0.2rem;
+        max-width: 100vw;
+    }
     .header-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.7rem;
-        padding: 1rem 0;
+        padding: 0.7rem 0.2rem;
     }
     header h1 {
         font-size: 1.1rem;
+        letter-spacing: 0.5px;
     }
     nav {
-        gap: 0.3rem;
+        gap: 0.2rem;
         flex-wrap: wrap;
     }
     nav a {
         font-size: 0.95rem;
         padding: 0.4rem 0.7rem;
+        border-radius: 6px;
+        margin-bottom: 0.2rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
     main {
         margin-top: 1rem;
@@ -300,12 +311,15 @@ body.indonesian-active .indonesian {
     }
     section {
         padding: 0.7rem 0.3rem;
-        border-radius: 8px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        margin-bottom: 1.2rem;
     }
     h2 {
         font-size: 1rem;
         padding-left: 0.3rem;
         margin-bottom: 0.7rem;
+        letter-spacing: 0.5px;
     }
     p, label, input, select, textarea {
         font-size: 0.98rem;
@@ -319,17 +333,21 @@ body.indonesian-active .indonesian {
         width: 100%;
         height: auto;
         min-height: 120px;
+        border-radius: 8px;
     }
     .event-card img {
         height: 90px;
+        border-radius: 7px;
     }
     .event-card {
         padding: 0.7rem 0.3rem;
-        border-radius: 7px;
+        border-radius: 8px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
     }
     .contact-info {
         padding: 0.7rem 0.3rem;
-        border-radius: 7px;
+        border-radius: 8px;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
     }
     .about-heading-row {
         flex-direction: column;
@@ -340,21 +358,28 @@ body.indonesian-active .indonesian {
         height: 32px;
         max-width: 60px;
     }
+    section > img {
+        border-radius: 8px;
+        margin: 1rem 0;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    }
 }
 
-@media (max-width: 400px) {
-
-    .header-content,
-    .page-container,
-    main,
-    section {
-        padding-left: 0.3rem;
-        padding-right: 0.3rem;
-    }
-
-    section {
-        padding: 0.5rem 0.2rem;
-    }
+/* General improvements for all screens */
+.page-container, section, .event-card, .contact-info {
+    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+    border: 1.5px solid #f3f4f6;
+}
+input, select, textarea {
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 2px #ffe5e5;
+}
+nav a, button, .language-toggle {
+    font-family: inherit;
+    letter-spacing: 0.5px;
 }
 
 /* Dark Mode */
