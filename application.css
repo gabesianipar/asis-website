@@ -130,3 +130,9 @@ button[type="submit"] {
   font-family: inherit;
   letter-spacing: 0.5px;
 }
+.form-container img {
+    display: block;
+    margin: 1.2rem auto;
+    max-width: 90%;
+    border-radius: 10px;
+}
