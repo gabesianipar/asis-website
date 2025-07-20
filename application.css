@@ -1,138 +1,150 @@
 body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+    background: #f8fafc;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #22223b;
     min-height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
 .form-container {
+    max-width: 600px;
+    margin: 2.5rem auto;
     background: #fff;
-    padding: 2.5rem 2rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.09);
-    max-width: 400px;
-    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(153,0,0,0.07);
+    padding: 2.2rem 2rem 2rem 2rem;
+    border: 1px solid #ffe18c;
 }
-
 .form-container h2 {
-    text-align: center;
     color: #990000;
-    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.form-intro {
+    font-size: 0.98rem;
+    color: #444;
+    margin-bottom: 1.1rem;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    border-left: none;
 }
-
-label {
+form label {
+    display: block;
     font-weight: 600;
-    color: #333;
+    margin-bottom: 0.2rem;
+    color: #990000;
+    margin-top: 0.7rem;
 }
-
-input, select, textarea {
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    background: #f9fafb;
+form input[type="text"],
+form input[type="email"],
+form input[type="file"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #e0e7ef;
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+    background: #f8fafc;
     transition: border 0.2s;
+    box-sizing: border-box;
 }
-input:focus, select:focus, textarea:focus {
-    border-color: #990000;
+form input[type="file"] {
+    background: #fff;
+    border: 1px solid #ffe18c;
+    padding: 0.45rem 0.6rem;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #FFC72C;
     outline: none;
+}
+form textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+hr {
+    border: none;
+    border-top: 1px solid #ffe18c;
+    margin: 1.2rem 0 0.7rem 0;
+}
+form h3 {
+    color: #990000;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    border-left: none;
+    padding-left: 0;
+}
+#dept-questions > div {
+    background: #f8fafc;
+    border-radius: 5px;
+    padding: 0.7rem 0.7rem 0.3rem 0.7rem;
+    margin-bottom: 0.7rem;
+    box-shadow: none;
+    border-left: none;
 }
 button[type="submit"] {
     background: #990000;
     color: #fff;
     border: none;
     border-radius: 6px;
-    padding: 0.8rem;
-    font-size: 1.1rem;
-    font-weight: 700;
+    padding: 0.5rem 1.1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: none;
+    transition: background 0.18s, color 0.18s;
+    outline: none;
+    margin-top: 0.7rem;
     cursor: pointer;
-    transition: background 0.2s;
+    display: block;
+    width: 100%;
 }
 button[type="submit"]:hover {
-    background: #b91c1c;
+    background: #FFC72C;
+    color: #22223b;
 }
-
 @media (max-width: 600px) {
-  body {
-    background: #f8fafc;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .form-container {
-    padding: 1.2rem 5vw;
-    border-radius: 12px;
-    max-width: 99vw;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    margin: 1.2rem auto;
-  }
-  .form-container h2 {
-    font-size: 1.15rem;
-    margin-bottom: 1.1rem;
-    letter-spacing: 0.5px;
-  }
-  label {
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-    color: #444;
-  }
-  input, select, textarea {
-    font-size: 1rem;
-    padding: 0.55rem 0.7rem;
-    border-radius: 8px;
-    border: 1.5px solid #e5e7eb;
-    background: #f5f6fa;
-    margin-bottom: 0.2rem;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  input:focus, select:focus, textarea:focus {
-    border-color: #990000;
-    background: #fff;
-  }
-  button[type="submit"] {
-    font-size: 1.08rem;
-    padding: 0.8rem;
-    border-radius: 8px;
-    background: linear-gradient(90deg, #990000 60%, #b91c1c 100%);
-    box-shadow: 0 2px 8px rgba(153,0,0,0.07);
-    margin-top: 0.5rem;
-    letter-spacing: 0.5px;
-  }
-  button[type="submit"]:hover {
-    background: #b91c1c;
-  }
-  form {
-    gap: 0.7rem;
-  }
-}
-
-/* General improvements for all screens */
-.form-container {
-  box-shadow: 0 6px 32px rgba(0,0,0,0.10);
-  border: 1.5px solid #f3f4f6;
-}
-input, select, textarea {
-  outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
-}
-input:focus, select:focus, textarea:focus {
-  box-shadow: 0 0 0 2px #ffe5e5;
-}
-button[type="submit"] {
-  font-family: inherit;
-  letter-spacing: 0.5px;
-}
-.form-container img {
-    display: block;
-    margin: 1.2rem auto;
-    max-width: 90%;
-    border-radius: 10px;
+    .form-container {
+        max-width: 99vw;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        border-radius: 8px;
+    }
+    .form-intro {
+        font-size: 0.95rem;
+        padding: 0;
+        border-radius: 0;
+    }
+    form label {
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+    }
+    form input,
+    form select,
+    form textarea {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.5rem;
+        border-radius: 5px;
+    }
+    button[type="submit"] {
+        font-size: 0.95rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 5px;
+    }
+    form h3 {
+        font-size: 0.95rem;
+        padding-left: 0;
+        border-left: none;
+    }
+    #dept-questions > div {
+        padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+        border-radius: 5px;
+    }
 }

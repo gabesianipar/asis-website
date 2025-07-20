@@ -24,6 +24,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .header-content {
@@ -33,6 +35,9 @@ header {
     padding: 1.2rem 0;
     max-width: 1100px;
     margin: 0 auto;
+    flex-direction: row;
+    gap: 1.5rem;
+    min-height: 70px;
 }
 
 header h1 {
@@ -42,13 +47,26 @@ header h1 {
     font-weight: 800;
     letter-spacing: 1px;
     transition: color 0.25s, transform 0.25s;
+    margin-bottom: 0;
+    flex: 1;
+    text-align: left;
+    background: none;
 }
 
-
+.header-logo {
+    height: 44px;
+    width: auto;
+    max-width: 70px;
+    margin-right: 1.1rem;
+    object-fit: contain;
+    display: block;
+}
 
 nav {
     display: flex;
     gap: 1.2rem;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -58,6 +76,9 @@ nav a {
     padding: 0.5rem 1rem;
     border-radius: 6px;
     transition: background 0.2s, color 0.2s;
+    font-size: 1.08rem;
+    margin-bottom: 0;
+    box-shadow: none;
 }
 
 nav a:hover,
@@ -75,6 +96,8 @@ nav a.active {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
+    font-size: 1rem;
+    margin-left: 1rem;
 }
 
 .language-toggle:hover {
@@ -100,9 +123,28 @@ h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
-    border-left: 5px solid #FFC72C;
-    /* USC Gold */
-    padding-left: 0.7rem;
+    border-left: 6px solid #FFC72C; /* Thicker, more premium accent */
+    padding-left: 1.1rem;           /* More breathing room from accent */
+    position: relative;
+    background: none;
+    box-shadow: none;
+}
+
+/* --- Section Heading Accent: Desktop --- */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+        border-left: 3px solid #FFC72C;
+        padding-left: 0.7rem;
+        padding-bottom: 0.1rem;
+        position: relative;
+        /* Remove horizontal accent and align with card edge */
+    }
+    .about-heading-row h2 {
+        text-align: center;
+        padding-left: 0;
+    }
 }
 
 p {
@@ -241,6 +283,9 @@ section>img {
 .about-heading-row h2 {
     margin-bottom: 0;
     flex: 1;
+    text-align: left;
+    align-items: center;
+    padding-left: 0; /* Let h2 handle the left padding */
 }
 
 .asis-logo {
@@ -315,6 +360,11 @@ body.indonesian-active .indonesian {
         color: #990000;
         font-weight: 700;
         background: none;
+    }
+    .header-logo {
+        height: 28px;
+        max-width: 40px;
+        margin-right: 0.5rem;
     }
     .language-toggle {
         order: 3;
@@ -436,6 +486,52 @@ body.indonesian-active .indonesian {
     }
 }
 
+/* --- Desktop Header & Nav Improvements --- */
+header {
+    padding-left: 0;
+    padding-right: 0;
+}
+.header-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.2rem 0;
+    min-height: 70px;
+}
+.header-logo {
+    height: 44px;
+    max-width: 70px;
+    margin-right: 1.1rem;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    flex: 1;
+    text-align: left;
+    color: #990000;
+    font-weight: 800;
+    background: none;
+}
+nav {
+    gap: 1.2rem;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+nav a {
+    font-size: 1.08rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+.language-toggle {
+    font-size: 1rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    margin-left: 1rem;
+}
+
 /* General improvements for all screens */
 .page-container, section, .event-card, .contact-info {
     box-shadow: 0 6px 32px rgba(0,0,0,0.10);
@@ -453,48 +549,6 @@ nav a, button, .language-toggle {
     letter-spacing: 0.5px;
 }
 
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-        color: #f3f4f6;
-    }
-
-    header,
-    section {
-        background: #22223b;
-        color: #f3f4f6;
-    }
-
-    nav a {
-        color: #f3f4f6;
-    }
-
-    nav a:hover,
-    nav a.active {
-        background: #FFC72C;
-        color: #22223b;
-    }
-
-    .language-toggle {
-        background: #FFC72C;
-        color: #22223b;
-    }
-
-    .language-toggle:hover {
-        background: #ffe18c;
-    }
-
-    .event-card {
-        background: linear-gradient(135deg, #FFC72C 0%, #990000 100%);
-        color: #22223b;
-    }
-
-    .contact-info {
-        background: linear-gradient(135deg, #990000 0%, #FFC72C 100%);
-        color: #fff;
-    }
-}
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
