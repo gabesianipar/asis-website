@@ -32,76 +32,79 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem 0;
-    max-width: 1100px;
+    gap: 1.2rem;
+    padding: 1.1rem 0.7rem;
+    max-width: 1200px;
     margin: 0 auto;
-    flex-direction: row;
-    gap: 1.5rem;
-    min-height: 70px;
-}
-
-header h1 {
-    font-size: 2rem;
-    color: #990000;
-    /* USC Cardinal */
-    font-weight: 800;
-    letter-spacing: 1px;
-    transition: color 0.25s, transform 0.25s;
-    margin-bottom: 0;
-    flex: 1;
-    text-align: left;
-    background: none;
+    width: 100%;
 }
 
 .header-logo {
     height: 44px;
-    width: auto;
     max-width: 70px;
     margin-right: 1.1rem;
     object-fit: contain;
     display: block;
 }
 
+.header-title-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    gap: 0.3rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #990000;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    text-align: left;
+    background: none;
+}
+
 nav {
     display: flex;
-    gap: 1.2rem;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 0.2rem;
 }
 
 nav a {
-    color: #222;
+    color: #990000;
     text-decoration: none;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: 0.45rem 0.9rem;
     border-radius: 6px;
-    transition: background 0.2s, color 0.2s;
     font-size: 1.08rem;
-    margin-bottom: 0;
-    box-shadow: none;
+    background: none;
+    transition: background 0.2s, color 0.2s;
 }
 
 nav a:hover,
 nav a.active {
-    background: #990000;
-    color: #fff;
+    background: #ffe18c;
+    color: #22223b;
 }
 
 .language-toggle {
-    background: #990000;
-    color: #fff;
+    background: #ffe18c;
+    color: #990000;
     border: none;
     border-radius: 6px;
     padding: 0.4rem 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
     font-size: 1rem;
     margin-left: 1rem;
+    transition: background 0.2s;
 }
 
 .language-toggle:hover {
-    background: #7f0000;
+    background: #FFC72C;
 }
 
 
@@ -123,8 +126,8 @@ h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.2rem;
-    border-left: 6px solid #FFC72C; /* Thicker, more premium accent */
-    padding-left: 1.1rem;           /* More breathing room from accent */
+    border-left: 4px solid #FFC72C; /* More natural accent thickness */
+    padding-left: 1rem;           /* Natural spacing from accent */
     position: relative;
     background: none;
     box-shadow: none;
@@ -133,18 +136,21 @@ h2 {
 /* --- Section Heading Accent: Desktop --- */
 @media (max-width: 600px) {
     h2 {
-        font-size: 1rem;
-        margin-bottom: 0.2rem;
-        border-left: 3px solid #FFC72C;
-        padding-left: 0.7rem;
-        padding-bottom: 0.1rem;
+        font-size: 1.08rem;
+        margin-bottom: 0.3rem;
+        border-left: 3px solid #FFC72C; /* Slightly thicker accent for mobile for visibility */
+        padding-left: 0.8rem;           /* More breathing room from accent */
+        padding-bottom: 0.08rem;
         position: relative;
-        /* Remove horizontal accent and align with card edge */
+        left: 0;
+        width: 100%;
+        text-align: left;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
     }
-    .about-heading-row h2 {
-        text-align: center;
-        padding-left: 0;
-    }
+    
+
 }
 
 p {
@@ -271,23 +277,6 @@ section>img {
     font-size: 1.08rem;
 }
 
-/* Flex row for ABOUT ASIS heading and logo */
-.about-heading-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.2rem;
-    margin-bottom: 1.2rem;
-}
-
-.about-heading-row h2 {
-    margin-bottom: 0;
-    flex: 1;
-    text-align: left;
-    align-items: center;
-    padding-left: 0; /* Let h2 handle the left padding */
-}
-
 .asis-logo {
     height: 50px;
     max-width: 100px;
@@ -337,220 +326,110 @@ body.indonesian-active .indonesian {
         background: #f8fafc;
     }
     .page-container {
-        padding: 0.5rem 4vw;
+        padding: 0.5rem 0.2rem;
         max-width: 100vw;
     }
     header {
-        padding-left: 4vw;
-        padding-right: 4vw;
+        padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+        box-shadow: none;
+        border-bottom: 1px solid #ffe18c;
+        background: #fff;
     }
     .header-content {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.5rem;
-        padding: 0.7rem 0.2rem;
-        min-height: 56px;
-    }
-    header h1 {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        flex: 1;
-        text-align: left;
-        color: #990000;
-        font-weight: 700;
-        background: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.1rem;
+        padding: 0.5rem 0.2rem 0.2rem 0.2rem;
+        min-height: unset;
+        width: 100%;
     }
     .header-logo {
         height: 28px;
         max-width: 40px;
-        margin-right: 0.5rem;
+        margin: 0 auto 0.1rem auto;
     }
-    .language-toggle {
-        order: 3;
-        font-size: 0.95rem;
-        padding: 0.3rem 0.7rem;
-        border-radius: 5px;
-        margin-left: 0.5rem;
+    .header-title-nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.1rem;
+    }
+    header h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0.1rem;
+        text-align: center;
+        max-width: 100vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0 auto 0.1rem auto;
+        color: #990000;
+        font-weight: 700;
+        background: none;
     }
     nav {
-        gap: 0.2rem;
+        width: 100%;
+        display: flex;
         flex-wrap: wrap;
-        order: 2;
-        flex: 2;
-        justify-content: flex-end;
+        gap: 0.05rem;
+        justify-content: center;
+        margin: 0 auto;
+        background: none;
     }
     nav a {
         font-size: 0.95rem;
-        padding: 0.4rem 0.7rem;
-        border-radius: 6px;
-        margin-bottom: 0.2rem;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        padding: 0.18rem 0.4rem;
+        border-radius: 5px;
+        margin-bottom: 0.08rem;
         background: none;
+        white-space: nowrap;
+        color: #990000;
+        border: none;
     }
-    main {
-        margin-top: 0.7rem;
-        margin-bottom: 0.7rem;
-        padding: 0.2rem 1vw;
+    .language-toggle {
+        font-size: 0.95rem;
+        padding: 0.15rem 0.4rem;
+        border-radius: 5px;
+        margin: 0.1rem auto 0 auto;
+        display: block;
+        background: #ffe18c;
+        color: #990000;
+        border: none;
     }
+    /* Section and heading accent fixes */
     section {
-        padding: 0.5rem 2vw;
-        margin-bottom: 0.7rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        margin-top: 0.5rem;
-    }
-    h1, h2, h3 {
-        text-align: center;
-    }
-    .about-heading-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.2rem;
-        margin-bottom: 0.3rem;
-    }
-    p, .event-date {
-        text-align: center;
+        padding: 0.5rem 0.2rem;
+        margin-bottom: 0.5rem;
+        border-radius: 8px;
+        box-shadow: none;
+        margin-top: 0.3rem;
+        border: none;
     }
     h2 {
         font-size: 1rem;
         margin-bottom: 0.2rem;
-        border-left: 3px solid #FFC72C;
-        padding-left: 0.7rem;
-        padding-bottom: 0.1rem;
+        border-left: 2.5px solid #FFC72C;
+        padding-left: 0.5rem;
+        padding-bottom: 0.08rem;
         position: relative;
-        /* Remove horizontal accent and align with card edge */
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
     }
+    
     h3 {
         font-size: 0.98rem;
         margin-bottom: 0.4rem;
-    }
-    p, label, input, select, textarea {
-        font-size: 0.92rem;
-        margin-bottom: 0.7rem;
-    }
-    .event-date, .event-description {
-        font-size: 0.9rem;
-    }
-    .image-gallery {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-    .image-container img {
-        aspect-ratio: 1 / 1;
-        width: 90%;
-        height: auto;
-        min-height: 180px; 
-        border-radius: 8px;
-    }
-    .event-card img {
-        height: 150px; /* Increased from 90px for bigger event images */
-        border-radius: 7px;
-        width: 80%;
-        display: block;
-        margin: 1rem auto;
-    }
-    .event-card {
-        padding: 1.7rem 1.1rem; /* More roomy on phones */
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        margin-bottom: 1.2rem; /* Extra space between cards */
-    }
-    .event-card .event-description {
-        font-size: 0.82rem; /* Smaller paragraph text in event cards */
-        margin-bottom: 0.5rem;
-    }
-    .contact-info {
-        padding: 0.7rem 0.3rem;
-        border-radius: 8px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-    }
-    .contact-info p, .contact-info strong, .contact-info span {
-        font-size: 0.85rem;
-    }
-    .about-heading-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.2rem;
-        margin-bottom: 0.3rem;
-    }
-    .asis-logo {
-        height: 32px;
-        max-width: 60px;
-        margin: 0.2rem auto 0.5rem auto;
-    }
-    section > img {
-        border-radius: 8px;
-        margin: 1rem 0;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+        border-left: none;
+        padding-left: 0;
+        text-align: left;
     }
 }
 
-/* --- Desktop Header & Nav Improvements --- */
-header {
-    padding-left: 0;
-    padding-right: 0;
-}
-.header-content {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1.2rem 0;
-    min-height: 70px;
-}
-.header-logo {
-    height: 44px;
-    max-width: 70px;
-    margin-right: 1.1rem;
-}
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 0;
-    flex: 1;
-    text-align: left;
-    color: #990000;
-    font-weight: 800;
-    background: none;
-}
-nav {
-    gap: 1.2rem;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-}
-nav a {
-    font-size: 1.08rem;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    margin-bottom: 0;
-    box-shadow: none;
-}
-.language-toggle {
-    font-size: 1rem;
-    padding: 0.4rem 0.9rem;
-    border-radius: 6px;
-    margin-left: 1rem;
-}
-
-/* General improvements for all screens */
-.page-container, section, .event-card, .contact-info {
-    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
-    border: 1.5px solid #f3f4f6;
-}
-input, select, textarea {
-    outline: none;
-    transition: border 0.2s, box-shadow 0.2s;
-}
-input:focus, select:focus, textarea:focus {
-    box-shadow: 0 0 0 2px #ffe5e5;
-}
-nav a, button, .language-toggle {
-    font-family: inherit;
-    letter-spacing: 0.5px;
-}
-
-
-/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;

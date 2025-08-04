@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIS Application Form</title>
+    <link rel="stylesheet" href="application.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="asis-flag-banner">
+            <img src="assets/asis_flag.webp" alt="ASIS Flag" class="asis-flag-img">
+        </div>
+        <h2>USC ASIS E-Board Application 2025–2026</h2>
+        <p class="form-intro">
+            <span style="font-size:1.3rem">📣 JOIN THE ASIS BOARD FOR 2025–2026!</span><br><br>
+            Do you have passion for community, culture, and making meaningful connections with other Indonesian Trojans
+            at USC? We're excited to open applications for the 2025–2026 ASIS Board!<br><br>
+            We are ASIS (Association of Indonesian Students at USC), a student-led organization dedicated to fostering a
+            warm, supportive space for Indonesians on campus. From our signature events like HOPA, Makan Bareng, and
+            Fall/Spring Welcoming, to casual hangouts and collaborative initiatives with other orgs, ASIS is all about
+            creating a home away from home.<br><br>
+            We're looking for enthusiastic, responsible, and creative individuals to join our team and help shape the
+            ASIS experience next year for the Indonesian community at USC. This is your chance to contribute, grow your
+            leadership skills, and build lasting friendships.<br><br>
+            <strong>Does this sound like you?</strong><br>
+            Fill in this application so that we can get to know you better and potentially welcome you to our
+            team!<br><br>
+            <strong>🗓 Deadline: August 20, 2025 at 11:59 PM PST</strong>
+        </p>
+
+        <form id="applicationForm" method="POST" enctype="multipart/form-data">
+            <label for="usc_email">USC Email <span style="color:red">*</span></label>
+            <input type="email" id="usc_email" name="usc_email" required>
+
+            <label for="personal_email">Personal Email <span style="color:red">*</span></label>
+            <input type="email" id="personal_email" name="personal_email" required>
+
+            <label for="year">Year <span style="color:red">*</span></label>
+            <select id="year" name="year" required>
+                <option value="">Select Year</option>
+                <option value="Freshman">Freshman</option>
+                <option value="Sophomore">Sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+                <option value="Graduate">Graduate</option>
+            </select>
+
+            <label for="why">Why are you interested in joining ASIS? (Max 250 words) <span
+                    style="color:red">*</span></label>
+            <textarea id="why" name="why" rows="5" maxlength="1500" required></textarea>
+
+            <label for="resume_highlight">What specific experience on your resume would you want to highlight for your
+                ASIS application? (Max 100 words) <span style="color:red">*</span></label>
+            <textarea id="resume_highlight" name="resume_highlight" rows="3" maxlength="600" required></textarea>
+
+            <label for="resume">Please submit your resume (if you have one).</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
+            <hr>
+            <h3>Section 2 of 2<br>Department-Specific Questions</h3>
+            <p class="form-intro">
+                <strong>Here's a quick overview of what each department does. Take a moment to read through and see
+                    where you'd be the best fit.</strong><br><br>
+                ✦ <strong>Events</strong> – Plan, organize, and bring ASIS events to life, from social gatherings to
+                cultural celebrations.<br>
+                ✦ <strong>Operations</strong> – Handle logistics, inventory and everything that keeps our events and
+                team running smoothly.<br>
+                ✦ <strong>Marketing</strong> – Design eye-catching graphics, create engaging content, and promote ASIS
+                across social networks.<br>
+                ✦ <strong>Outreach</strong> – Connect with sponsors, build partnerships, and grow ASIS's network and
+                opportunities.<br>
+                ✦ <strong>Finance</strong> – Manage budgets, lead fundraising efforts, and make sure we're financially
+                strong for the year.<br>
+            </p>
+
+            <label for="first_choice">What is your first choice? <span style="color:red">*</span></label>
+            <select id="first_choice" name="first_choice" required>
+                <option value="">Select Department</option>
+                <option value="Events">Events</option>
+                <option value="Operations">Operations</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Outreach">Outreach</option>
+                <option value="Finance">Finance</option>
+            </select>
+
+            <label for="second_choice">What is your second choice (if any)?</label>
+            <select id="second_choice" name="second_choice">
+                <option value="">None</option>
+                <option value="Events">Events</option>
+                <option value="Operations">Operations</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Outreach">Outreach</option>
+                <option value="Finance">Finance</option>
+            </select>
+
+            <!-- Fixed IDs to match JavaScript (using underscores) -->
+            <div id="dept-questions">
+                <div id="events_question" style="display:none">
+                    <label for="events_major">If ASIS could only host one major event this year, what do you think
+                        should it look like? And how would you make it special?</label>
+                    <textarea id="events_major" name="events_major" rows="4" maxlength="600"></textarea>
+                </div>
+
+                <div id="operations_question" style="display:none">
+                    <label for="operations_motivation">Operations work often goes unnoticed, but it's crucial. What
+                        gives you the motivation to do this kind of behind-the-scenes work?</label>
+                    <textarea id="operations_motivation" name="operations_motivation" rows="4"
+                        maxlength="600"></textarea>
+                </div>
+
+                <div id="outreach_question" style="display:none">
+                    <label for="outreach_experience">Do you have any experience with sales or cold emailing? This can be
+                        from a school club, internship, or personal project. Please describe in detail.</label>
+                    <textarea id="outreach_experience" name="outreach_experience" rows="4" maxlength="600"></textarea>
+                </div>
+
+                <div id="finance_question" style="display:none">
+                    <label for="finance_ideas">What fundraising ideas do you have and how would it be
+                        successful?</label>
+                    <textarea id="finance_ideas" name="finance_ideas" rows="4" maxlength="600"></textarea>
+                </div>
+
+                <div id="marketing_question" style="display:none">
+                    <label for="marketing_portfolio">Attach a sample portfolio of previous marketing projects that you
+                        have worked on (minimum of 2).</label>
+                    <input type="file" id="marketing_portfolio" name="marketing_portfolio"
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple>
+                </div>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- Single, unified JavaScript handler -->
+    <script>
+        // Configuration
+        const CONFIG = {
+            API_URL: window.location.origin,
+            MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
+            ALLOWED_FILE_TYPES: [
+                'application/pdf',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                'image/jpeg',
+                'image/jpg',
+                'image/png',
+                'image/gif',
+                'text/plain'
+            ]
+        };
+
+        // Show/hide conditional questions based on department selection
+        function updateConditionalQuestions() {
+            const firstChoice = document.getElementById('first_choice').value;
+            const secondChoice = document.getElementById('second_choice').value;
+
+            console.log('🔄 Updating questions:', { firstChoice, secondChoice });
+
+            // Hide all conditional questions first
+            const questionIds = ['events_question', 'operations_question', 'outreach_question', 'finance_question', 'marketing_question'];
+            questionIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.style.display = 'none';
+            });
+
+            // Show relevant questions
+            if (firstChoice === 'Events' || secondChoice === 'Events') {
+                const element = document.getElementById('events_question');
+                if (element) element.style.display = 'block';
+            }
+            if (firstChoice === 'Operations' || secondChoice === 'Operations') {
+                const element = document.getElementById('operations_question');
+                if (element) element.style.display = 'block';
+            }
+            if (firstChoice === 'Outreach' || secondChoice === 'Outreach') {
+                const element = document.getElementById('outreach_question');
+                if (element) element.style.display = 'block';
+            }
+            if (firstChoice === 'Finance' || secondChoice === 'Finance') {
+                const element = document.getElementById('finance_question');
+                if (element) element.style.display = 'block';
+            }
+            if (firstChoice === 'Marketing' || secondChoice === 'Marketing') {
+                const element = document.getElementById('marketing_question');
+                if (element) element.style.display = 'block';
+            }
+        }
+
+        // Utility functions
+        function showError(message) {
+            console.error('❌ Error:', message);
+
+            // Remove existing error messages
+            const existingErrors = document.querySelectorAll('.error-message');
+            existingErrors.forEach(error => error.remove());
+
+            // Create error element
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.style.cssText = `
+                background: #fee2e2;
+                border: 1px solid #fecaca;
+                color: #dc2626;
+                padding: 12px 16px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                font-size: 14px;
+                animation: slideDown 0.3s ease-out;
+            `;
+            errorDiv.innerHTML = `<strong>Error:</strong> ${message}`;
+
+            // Insert at top of form
+            const form = document.querySelector('form');
+            if (form) {
+                form.insertBefore(errorDiv, form.firstChild);
+                errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function showSuccess() {
+            console.log('✅ Success! Showing success screen');
+
+            const container = document.querySelector('.form-container');
+            const successHTML = `
+                <div style="text-align: center; animation: slideUp 0.6s ease-out;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎉</div>
+                    <h1 style="color: #990000; font-size: 2rem; margin-bottom: 1rem;">Thank You!</h1>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.5; color: #333;">
+                        Your application has been submitted successfully.<br>
+                        We appreciate your interest in ASIS.<br>
+                        We'll be in touch soon!
+                    </p>
+                    <button onclick="window.location.href='/'" style="
+                        background: #990000; color: white; border: none; padding: 12px 24px;
+                        border-radius: 8px; font-size: 1rem; cursor: pointer; transition: all 0.2s;
+                    ">Return to Homepage</button>
+                </div>
+                <style>
+                    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+                    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+                </style>
+            `;
+
+            container.innerHTML = successHTML;
+            window.scrollTo(0, 0);
+        }
+
+        function showLoading(button, isLoading = true) {
+            if (!button) return;
+
+            if (isLoading) {
+                button.dataset.originalText = button.textContent;
+                button.textContent = 'Submitting...';
+                button.disabled = true;
+                button.style.opacity = '0.7';
+            } else {
+                button.textContent = button.dataset.originalText || 'Submit Application';
+                button.disabled = false;
+                button.style.opacity = '1';
+            }
+        }
+
+        function validateFiles(files) {
+            if (!files || files.length === 0) return true;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                if (file.size > CONFIG.MAX_FILE_SIZE) {
+                    throw new Error(`File "${file.name}" is too large. Maximum size is 10MB.`);
+                }
+                if (!CONFIG.ALLOWED_FILE_TYPES.includes(file.type)) {
+                    throw new Error(`File "${file.name}" has invalid type. Allowed: PDF, DOC, DOCX, JPG, PNG, GIF, TXT`);
+                }
+            }
+            return true;
+        }
+
+        function validateForm(formData) {
+            const required = ['usc_email', 'personal_email', 'year', 'why', 'resume_highlight', 'first_choice'];
+            const missing = [];
+
+            for (const field of required) {
+                const value = formData.get(field);
+                if (!value || value.toString().trim() === '') {
+                    missing.push(field.replace('_', ' '));
+                }
+            }
+
+            if (missing.length > 0) {
+                throw new Error(`Please fill in required fields: ${missing.join(', ')}`);
+            }
+
+            // Email validation
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const uscEmail = formData.get('usc_email');
+            const personalEmail = formData.get('personal_email');
+
+            if (!emailRegex.test(uscEmail)) {
+                throw new Error('Please enter a valid USC email address');
+            }
+            if (!emailRegex.test(personalEmail)) {
+                throw new Error('Please enter a valid personal email address');
+            }
+
+            return true;
+        }
+
+        // Main form submission handler
+        async function handleFormSubmission(event) {
+            event.preventDefault();
+            console.log('🚀 Form submission started');
+
+            const form = event.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            try {
+                showLoading(submitButton, true);
+
+                const formData = new FormData(form);
+
+                // Validation
+                validateForm(formData);
+
+                const resumeFiles = form.querySelector('input[name="resume"]')?.files;
+                const portfolioFiles = form.querySelector('input[name="marketing_portfolio"]')?.files;
+
+                if (resumeFiles) validateFiles(resumeFiles);
+                if (portfolioFiles) validateFiles(portfolioFiles);
+
+                console.log('📤 Sending request...');
+
+                const response = await fetch(`${CONFIG.API_URL}/submit`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                console.log('📥 Response:', response.status, response.ok);
+
+                if (!response.ok) {
+                    let errorMessage = `Server error (${response.status})`;
+                    try {
+                        const errorData = await response.json();
+                        if (errorData.message) {
+                            errorMessage = errorData.message;
+                        }
+                    } catch (e) {
+                        // Use default message
+                    }
+                    throw new Error(errorMessage);
+                }
+
+                const result = await response.json();
+                console.log('📋 Result:', result);
+
+                if (result.success) {
+                    showSuccess();
+                } else {
+                    throw new Error(result.message || 'Application submission failed');
+                }
+
+            } catch (error) {
+                console.error('❌ Submission failed:', error);
+                showLoading(submitButton, false);
+                showError(error.message || 'An unexpected error occurred. Please try again.');
+            }
+        }
+
+        // Initialize everything when DOM loads
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('🔧 Initializing application form...');
+
+            // Set up department selection listeners
+            const firstChoice = document.getElementById('first_choice');
+            const secondChoice = document.getElementById('second_choice');
+
+            if (firstChoice) firstChoice.addEventListener('change', updateConditionalQuestions);
+            if (secondChoice) secondChoice.addEventListener('change', updateConditionalQuestions);
+
+            // Set up form submission
+            const form = document.getElementById('applicationForm');
+            if (form) {
+                form.addEventListener('submit', handleFormSubmission);
+                console.log('✅ Form handler attached');
+            } else {
+                console.error('❌ Form not found');
+            }
+
+            console.log('🎉 Initialization complete!');
+        });
+    </script>
+</body>
+
+</html>
