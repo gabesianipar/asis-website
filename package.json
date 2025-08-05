@@ -1,0 +1,21 @@
+{
+  "name": "asis-website",
+  "version": "1.0.0",
+  "description": "ASIS Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5",
+    "express-rate-limit": "^6.7.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
