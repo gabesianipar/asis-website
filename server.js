@@ -484,20 +484,22 @@ app.use('*', (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, async () => {
-  console.log('\n🚀 === SERVER STARTING ===');
-  console.log(`📡 Server running on port ${PORT}`);
-  console.log(`🏥 Health check: http://localhost:${PORT}/health`);
-  console.log(`✅ Success page: http://localhost:${PORT}/success`);
-  console.log(`🌐 CORS enabled for: 127.0.0.1:5500, localhost:3000, localhost:3001`);
-  
-  const connected = await testConnections();
-  if (connected) {
-    console.log('🎉 All systems ready!');
-  } else {
-    console.log('⚠️  Some connections failed - check configuration');
-  }
-  console.log('='.repeat(50));
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, async () => {
+    console.log('\n🚀 === SERVER STARTING ===');
+    console.log(`📡 Server running on port ${PORT}`);
+    console.log(`🏥 Health check: http://localhost:${PORT}/health`);
+    console.log(`✅ Success page: http://localhost:${PORT}/success`);
+    console.log(`🌐 CORS enabled for: 127.0.0.1:5500, localhost:3000, localhost:3001`);
+    
+    const connected = await testConnections();
+    if (connected) {
+      console.log('🎉 All systems ready!');
+    } else {
+      console.log('⚠️  Some connections failed - check configuration');
+    }
+    console.log('='.repeat(50));
+  });
+}
 
 module.exports = app;
